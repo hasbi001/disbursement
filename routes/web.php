@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/','TransactionController@index')->name('transaksi');
+Route::post('/list','TransactionController@ajaxLoad')->name('transaksi.list');
+Route::get('/view/{id}','Api\TransactionController@view')->name('transaksi.view');  

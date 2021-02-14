@@ -18,7 +18,7 @@ class CreateTableTransactionDetail extends Migration
             $table->integer('transaction_id');
             $table->string('disburse_id');
             $table->string('amount');
-            $table->timestamp('timestamps');
+            $table->timestamp('timestamp')->nullable();
             $table->string('account_number');
             $table->string('beneficiary_name');
             $table->string('remark')->nullable();
