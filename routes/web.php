@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('/','TransactionController@index')->name('transaksi');
-Route::post('/list','TransactionController@ajaxLoad')->name('transaksi.list');
-Route::get('/view/{id}','Api\TransactionController@view')->name('transaksi.view');  
+Route::get('/list','TransactionController@ajaxLoad')->name('transaksi.list');
+Route::get('/view/{id}','TransactionController@view')->name('transaksi.view');  

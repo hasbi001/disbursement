@@ -10,17 +10,16 @@ class TransactionController extends Controller
 {
     public function index()
     {
-    	return view('transaksi');
+    	return view('index');
     }
 
-    public function ajaxLoad(Request $request)
+    public function ajaxLoad()
     {
     	$model = TransactionDetail::orderBy('id','DESC');
 
     	return DataTables::of($model)->addColumn('action', function($row)
             {
-                $action = '<a href="'.route('assign_senderid.change.is_active',['id' => $row->disburse_id]).'"> view </a>'
-                $action .= '</div>';
+                $action = '<a href="'.route('view',['id' => $row->disburse_id]).'"> view </a>';
 
                 return $action;
             })
