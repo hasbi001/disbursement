@@ -1,0 +1,25 @@
+how to run project :
+1. buat file .env dengan meng-copy isi file .env.example
+2. create database dengan nama disbursement
+3. setting database di file .env seperti dibawah
+	DB_DATABASE=disbursement
+	DB_USERNAME=root
+	DB_PASSWORD=
+4. jalankan composer update
+5. jalanlan php artisan key:generate
+6. jalankan php artisan migrate
+7. jalankan php artisan passport:install --uuids
+8. jalankan "php artisan config:cache && php artisan route:clear && php artisan view:cache && php artisan event:cache"
+9. jalankan php artisan serve
+
+untuk hit api
+
+1. send data 
+url  => localhost:8000/transaksi/save
+method => POST
+parameter => semua attribut yg ada di dokumentasi api flip
+
+2. check data
+url => localhost:8000/transaksi/check/{parameter}
+method => GET
+parameter => id dari response api flip
